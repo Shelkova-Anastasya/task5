@@ -22,14 +22,13 @@ public class DaoCarImp implements DaoCar {
     }
 
     @Override
-    public List<Car> getCars(int count) {
-
+    public List<Car> getCars(Integer count) {
         if (count > 0 && count < list.size()) {
-            return list.subList(0, count);
-        } else {
+           return list.subList(0, count);
+        } else
             return list;
-        }
     }
+
     @Override
     public List<Car> getCars() {
         return  list;
