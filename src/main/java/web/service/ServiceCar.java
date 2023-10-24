@@ -5,6 +5,6 @@ import web.model.Car;
 import java.util.List;
 
 public interface ServiceCar {
-    List<Car> getCars(int count);
-    List<Car> getCars();
+    List<Car> getCars(Integer count);
+
 }

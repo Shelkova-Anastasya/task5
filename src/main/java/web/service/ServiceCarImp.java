@@ -12,15 +12,21 @@ import web.model.Car;
 import java.util.List;
 @Service
 public class ServiceCarImp implements ServiceCar {
+
+    private final DaoCar daoCar;
     @Autowired
-    private DaoCarImp daoCar;;
-    @Override
-    public List<Car> getCars(int count) {
-        return daoCar.getCars(count);
-    }
-    @Override
-    public List<Car> getCars() {
-        return daoCar.getCars();
+    public ServiceCarImp(DaoCar daoCar) {
+        this.daoCar = daoCar;
     }
 
+    @Override
+    public List<Car> getCars(Integer count) {
+        if (count != null) {
+            return daoCar.getCars(count);
+        } else {
+            return daoCar.getCars();
+        }
+    }
 }
+
+
